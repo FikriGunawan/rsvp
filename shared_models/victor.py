@@ -10,7 +10,7 @@ class EmmaNorman(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True,
-                                default='Your wedding invitation url. e.g. reservasidulu.com/undangan-mantan')
+                                default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
 
     # section 1
     bride_name = models.CharField(max_length=30, default='Your bride name')

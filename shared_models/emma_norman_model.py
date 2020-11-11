@@ -10,12 +10,12 @@ class EmmaNorman(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True,
-                                default='Your wedding invitation url. e.g. reservasidulu.com/undangan-mantan')
+                                default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
 
     # section 1
     bride_name = models.CharField(max_length=30, default='Your bride name')
-    grome_name = models.CharField(max_length=30, default='Your gome name')
-    hashtag = models.CharField(max_length=30, default='Your #hastag here')
+    grome_name = models.CharField(max_length=30, default='Your groom name')
+    hashtag = models.CharField(max_length=30, default='Your #hashtag here')
     title = models.CharField(max_length=40, help_text='Your wedding title')
     img_logo = models.ImageField(upload_to='img/emma_norman/', blank=False, help_text='Your logo goes here')
     img_background1 = models.ImageField(upload_to='img/emma_norman/', blank=True)

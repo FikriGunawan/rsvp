@@ -10,19 +10,19 @@ class LiamFelicia(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True,
-                                default='Your wedding invitation url. e.g. reservasidulu.com/undangan-mantan')
+                                default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
 
     # section 1
     title = models.CharField(max_length=40, help_text='Your wedding title')
     bride_name = models.CharField(max_length=30, default='Your bride name')
-    grome_name = models.CharField(max_length=30, default='Your gome name')
+    grome_name = models.CharField(max_length=30, default='Your groom name')
     hashtag = models.CharField(max_length=30, default='Your #hashtag here')
-    img_logo = models.ImageField(upload_to='img/against/', blank=False, help_text='Your logo goes here')
+    img_logo = models.ImageField(upload_to='img/liam/', blank=False, help_text='Your logo goes here')
 
     # section 2
     banner_bg = models.ImageField(upload_to='img/liam/', blank=True)
     banner_title = models.CharField(max_length=50, default='')
-    section2_image = models.ImageField(upload_to='img/against/', blank=True, null=True, help_text='Your summary image')
+    section2_image = models.ImageField(upload_to='img/liam/', blank=True, null=True, help_text='Your summary image')
     about_title = models.CharField(blank=False, max_length=200, help_text='Your summary brief title')
     about_brief = models.TextField(blank=False, help_text='Your summary brief')
 
@@ -38,12 +38,12 @@ class LiamFelicia(models.Model):
                                               '415 Greenwich St (at Bethune St) New York, NY 10014 (212) 555–0123')
 
     # section 4
-    gallery1 = models.ImageField(blank=True, upload_to='img/against/', help_text='Your gallery')
-    gallery2 = models.ImageField(blank=True, upload_to='img/against/', help_text='Your gallery')
-    gallery3 = models.ImageField(blank=True, upload_to='img/against/', help_text='Your gallery')
-    gallery4 = models.ImageField(blank=True, upload_to='img/against/', help_text='Your gallery')
+    gallery1 = models.ImageField(blank=True, upload_to='img/liam/', help_text='Your gallery')
+    gallery2 = models.ImageField(blank=True, upload_to='img/liam/', help_text='Your gallery')
+    gallery3 = models.ImageField(blank=True, upload_to='img/liam/', help_text='Your gallery')
+    gallery4 = models.ImageField(blank=True, upload_to='img/liam/', help_text='Your gallery')
 
-    rsvp_img = models.ImageField(upload_to='img/against/', null=True)
+    rsvp_img = models.ImageField(upload_to='img/liam/', null=True)
 
     created = models.DateTimeField(auto_now_add=True, auto_created=True, editable=False)
     updated = models.DateTimeField(auto_created=True, auto_now=True, editable=True)
