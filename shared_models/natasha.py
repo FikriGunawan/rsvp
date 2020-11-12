@@ -10,7 +10,7 @@ class NatashaBruce(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True,
-                                help_text='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
+                                help_text='Your wedding invitation url. e.g. reservasidulu.com/bushes-and-leaves')
     # section 1
     title = models.CharField(max_length=40, help_text='Your wedding title')
     img_logo = models.ImageField(upload_to='img/natasha/', blank=False, help_text='Your logo goes here')
