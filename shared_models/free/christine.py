@@ -6,21 +6,21 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 
 
-class FreeAnastasia(models.Model):
+class FreeChristine(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
-    site_url = models.SlugField(unique=True, default='Your birthday invitation url. e.g. reservasidulu.com/cindy-anastasia')
+    site_url = models.SlugField(unique=True, default='Your birthday invitation url. e.g. reservasidulu.com/stefany-christine')
 
-    # section 1
+    #section 1
     title = models.CharField(max_length=40, help_text='Your birthday title')
     name = models.CharField(max_length=30, default='Your name')
-    age = models.CharField(max_length=2, default='18th')
+    age = models.CharField(max_length=2, default='3 rd')
     hashtag = models.CharField(max_length=30, default='Your #hashtag here')
-
-    # section 2
-    image = models.ImageField(upload_to='img/free/anastasia/', blank=True, null=True)
-    date = models.CharField(max_length=10, default='25.04.2020')
+    
+    #section 2
+    image = models.ImageField(upload_to='img/free/christine/', blank=True, null=True)
     day = models.CharField(max_length=10, default='SAT')
+    date = models.CharField(max_length=40, default='25 April 2020')
     time = models.CharField(max_length=20, default='5.30 PM')
     place = models.CharField(max_length=40, default='Marina Village Baja Room')
     address = models.CharField(max_length=50, default='939 Quivira Way, San Diego California 92109')
@@ -40,4 +40,4 @@ class FreeAnastasia(models.Model):
         return str(self.title)
 
     def get_absolute_url(self):
-        return reverse('free_anastasia_detail', kwargs={'site_url': self.site_url})
+        return reverse('free_christine_detail', kwargs={'site_url': self.site_url})
