@@ -10,9 +10,6 @@ class VictorKarla(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True, default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
-
-    
-
     
     # section 1
     title = models.CharField(max_length=40, default='Your wedding title')
@@ -60,15 +57,7 @@ class VictorKarla(models.Model):
     vc_note = models.CharField(max_length=100, default=' *We will be providing a shuttle bus for all of our guests from the resort to the venue.')
     
     # section 6
-    inv_pdf = models.FileField(upload_to='file/victor/', blank=True, null=True)
-
-
-
-
-
-
-
-    
+    inv_pdf = models.FileField(upload_to='file/victor/', blank=True, null=True)    
 
     created = models.DateTimeField(auto_now_add=True, auto_created=True, editable=False)
     updated = models.DateTimeField(auto_created=True, auto_now=True, editable=True)
