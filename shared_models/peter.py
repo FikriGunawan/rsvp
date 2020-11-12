@@ -10,7 +10,7 @@ class PeterMary(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     site_url = models.SlugField(unique=True,
-                                default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
+                                default='Your wedding invitation url. e.g. reservasidulu.com/scrapbook')
     # section 1
        title = models.CharField(max_length=40, default='Your wedding title')
        img_logo = models.ImageField(upload_to='img/peter/', blank=False, help_text='Your logo goes here')
