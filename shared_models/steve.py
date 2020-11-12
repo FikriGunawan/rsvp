@@ -9,43 +9,64 @@ from ckeditor.fields import RichTextField
 class SteveSharon(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
-    site_url = models.SlugField(unique=True,
-                                default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
+    site_url = models.SlugField(unique=True, default='Your wedding invitation url. e.g. reservasidulu.com/bride-groom')
 
     # section 1
-    title = models.CharField(max_length=40, help_text='Your wedding title')
-    # bride_name = models.CharField(max_length=30, default='Your bride name')
-    # grome_name = models.CharField(max_length=30, default='Your gome name')
-    # hashtag = models.CharField(max_length=30, default='Your #hastag here')
-    # img_logo = models.ImageField(upload_to='img/emma_norman/', blank=False, help_text='Your logo goes here')
-    # img_background1 = models.ImageField(upload_to='img/emma_norman/', blank=True)
-    # img_background2 = models.ImageField(upload_to='img/emma_norman/', blank=True)
-    # img_background3 = models.ImageField(upload_to='img/emma_norman/', blank=True)
-    #
-    # # section 2
-    # about_quote = models.CharField(max_length=100, default='Your quote here')
-    # about_quote_by = models.CharField(max_length=100, default='Quote by')
-    # about_img1 = models.ImageField(upload_to='img/emma_norman/', blank=True, null=True, help_text='Your summary image')
-    # about_img2 = models.ImageField(upload_to='img/emma_norman/', blank=True, null=True, help_text='Your summary image')
-    # about_title = models.CharField(blank=False, max_length=200, help_text='Your summary brief title')
-    # about = models.TextField(blank=False, help_text='Your summary brief')
-    #
-    # # section 3
-    # ceremony_img = models.ImageField(upload_to='img/emma_norman/', blank=True, null=True)
-    # ceremony_time = models.CharField(max_length=40, default='3:00pm – 4:00pm', help_text='Your cermony date time')
-    # ceremony_location = RichTextField()
-    #
-    # reception_img = models.ImageField(upload_to='img/emma_norman/', blank=True, null=True)
-    # reception_time = models.CharField(max_length=40, default='6:00pm – 7:00pm', help_text='Your cermony date time')
-    # reception_location = RichTextField()
-    #
-    # # section 4
-    # gallery1 = models.ImageField(blank=True, upload_to='img/emma_norman/', help_text='Your gallery')
-    # gallery2 = models.ImageField(blank=True, upload_to='img/emma_norman/', help_text='Your gallery')
-    # gallery3 = models.ImageField(blank=True, upload_to='img/emma_norman/', help_text='Your gallery')
-    # gallery4 = models.ImageField(blank=True, upload_to='img/emma_norman/', help_text='Your gallery')
-    #
-    # rsvp_img = models.ImageField(upload_to='img/emma_norman/', null=True)
+    title = models.CharField(max_length=40, default='Your wedding title')
+    img_logo = models.ImageField(upload_to='img/steve/', blank=False, help_text='Your logo goes here')
+    bride_name = models.CharField(max_length=30, default='Your bride name')
+    groom_name = models.CharField(max_length=30, default='Your groom name')
+    hashtag = models.CharField(max_length=30, default='Your #hashtag here')
+
+	# section 2
+    banner_title = models.CharField(max_length=50, default='Through Thick and Thin')
+    banner_bg = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+	
+    # section 3
+    story_image = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    story_brief = models.TextField(default='Your summary brief')
+    story_gr_name = models.CharField(max_length=30, default='STEVE ROBERTS')
+    story_gr_brief = models.TextField(default='Your groom brief')
+    story_br_name = models.CharField(max_length=30, default='SHARON CARTIER')
+    story_br_brief = models.TextField(default='Your bride brief')
+	
+    # section 4
+    vc_title = models.CharField(max_length=40, default='OUR WEDDING CEREMONY')
+    vc_maps_link = models.CharField(max_length=50, default='Your maps link')
+    vc_date = models.CharField(max_length=2, default='23')
+    vc_my = models.CharField(max_length=30, default='September 2020')
+    vc_time = models.CharField(max_length=50, default='10:00 am till 12:00 pm')
+    vc_place = models.CharField(max_length=50, default='Grand Chapel of Toronto, Canada')
+    vc_address = models.CharField(max_length=50, default='Holy Spirit Street, 3-5 A, Glass Boulevard, Water Village')
+    vc_image = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    vr_title = models.CharField(max_length=40, default='OUR WEDDING GARDEN PARTY')
+    vr_maps_link = models.CharField(max_length=50, default='Your maps link')
+    vr_date = models.CharField(max_length=2, default='24')
+    vr_my = models.CharField(max_length=30, default='September 2020')
+    vr_time = models.CharField(max_length=50, default='05:00 pm till 07:00 pm')
+    vr_place = models.CharField(max_length=50, default='Flower Palace Toronto, Canada')
+    vr_address = models.CharField(max_length=50, default='Legendary Street, 14 B, Southern Sea, Ocean Hill')
+    vr_dress = models.CharField(max_length=50, default='Simple Minimal Formal Attire, No Complicated Sequence, Plain Sophisticated look')
+    vr_image = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+	
+    # section 5
+    acm_image = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    acm_place = models.CharField(max_length=40, default='THE CONFIDANTE')
+    acm_subtitle = models.CharField(max_length=40, default='1 Night Stay | 1 Suite Bedroom')
+    acm_brief = models.TextField(default='Your summary brief')
+    acm_maps_link = models.CharField(max_length=50, default='Your maps link')
+	
+    # section 6
+    gallery_brief = models.TextField(default='Your summary brief')
+    gallery_image1 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    gallery_image2 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    gallery_image3 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    gallery_image4 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    gallery_image5 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+    gallery_image6 = models.ImageField(upload_to='img/steve/', blank=True, null=True)
+	
+    # section 7
+    inv_pdf = models.FileField(upload_to='file/steve/', blank=True, null=True)
 
     created = models.DateTimeField(auto_now_add=True, auto_created=True, editable=False)
     updated = models.DateTimeField(auto_created=True, auto_now=True, editable=True)
