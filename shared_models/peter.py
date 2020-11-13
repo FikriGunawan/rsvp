@@ -45,7 +45,7 @@ class PeterMary(models.Model):
        vr_time = models.CharField(max_length=30, default='Time')
        vr_dress = models.CharField(max_length=30, default='Dresscode')
     # section 5
-       gallery_brief = models.ImageField(upload_to='img/peter/', blank=True, null=True)
+       gallery_brief = models.TextField(default='Brief')
        gallery_image1 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
        gallery_image2 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
        gallery_image3 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
@@ -56,7 +56,7 @@ class PeterMary(models.Model):
        gallery_image8 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
     # section 6
        acm_image = models.ImageField(upload_to='img/peter/', blank=True, null=True)
-       acm_place = models.ImageField(upload_to='img/peter/', blank=True, null=True)
+       acm_place = models.TextField(default='Your summary brief')
        acm_brief = models.TextField(default='Your summary brief')
        acm_maps_link =  models.CharField(max_length=30, default='Date')
     # section 7
