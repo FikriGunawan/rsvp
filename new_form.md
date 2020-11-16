@@ -723,6 +723,7 @@
 				* {{ form.about_brief1 }}				
 				* {{ form.about_brief2 }}
 				* {{ form.about_image2 }}
+				* {{ form.countdown_background }}
 			+ Album
 				* {{ form.album_image1 }}
 				* {{ form.album_image2 }}
