@@ -23,7 +23,7 @@ class PeterMary(models.Model):
     # section 3
        about_title1 = models.CharField(max_length=50, default='Title')
        about_brief1 = models.TextField(default='Your summary brief')
-       about_image_text1 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
+       about_image_text1 = models.CharField(max_length=50, default='Image text')
        about_image1 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
        about_image1_mobile = models.ImageField(upload_to='img/peter/', blank=True, null=True)
        about_image2 = models.ImageField(upload_to='img/peter/', blank=True, null=True)
@@ -58,7 +58,7 @@ class PeterMary(models.Model):
        acm_image = models.ImageField(upload_to='img/peter/', blank=True, null=True)
        acm_place = models.TextField(default='Your summary brief')
        acm_brief = models.TextField(default='Your summary brief')
-       acm_maps_link =  models.CharField(max_length=30, default='Date')
+       acm_maps_link =  models.CharField(max_length=30, default='Maps Link')
     # section 7
        inv_pdf = models.FileField(upload_to='file/lucas/', blank=True, null=True)
 
