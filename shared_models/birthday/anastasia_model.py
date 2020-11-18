@@ -1,25 +1,43 @@
-from django.urls import reverse
 from django.db import models
-from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 from rsvp.themes.models import Theme
+from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 class Anastasia(models.Model):
     u_id = models.ForeignKey(User, on_delete=models.CASCADE)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+    site_url = models.SlugField(unique=True, default='Your wedding invitation url. e.g. reservasidulu.com/pastel-party')
 
-    site_url = models.SlugField()
+    # section 1
     title = models.CharField(max_length=40, help_text='Your birthday title')
-    subtitle = models.CharField(max_length=40, help_text='Your birthday subtitle')
-    img_background = models.ImageField(upload_to='img/anastasia/', blank=True)
-
-    date = models.DateField()
-    day = models.CharField(default='Sunday', max_length=8, help_text='Your birth-day')
-    hour = models.TimeField()
-
-    place = models.CharField(max_length=100, help_text='Your birthday place')
-    dresscode = models.CharField(max_length=20, help_text='Your birthday dresscode')
+    banner_name = models.CharField(max_length=30, default='Your name')
+    banner_age = models.CharField(max_length=10, default='18th')
+    
+    # section 2
+    banner_brief = models.TextField(default='Please join us in celebration of Anastasia’s birthday. It’s a party and you are cordially invited.')
+    banner_bg = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    banner_bg_mobile = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    
+    # section 3
+    gallery_image1 = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    gallery_image2 = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    gallery_image3 = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    gallery_image4 = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    gallery_image5 = models.ImageField(upload_to='img/anastasia/', blank=True, null=True)
+    
+    # section 4
+    dap_date = models.CharField(max_length=10, default='25.04.2020')
+    dap_day = models.CharField(max_length=10, default='SAT')
+    dap_time = models.CharField(max_length=20, default='5.30 PM')
+    dap_place = models.CharField(max_length=40, default='Marina Village')
+    dap_address = models.CharField(max_length=50, default='Baja Room 939 Quivira Way, San Diego California 92109')
+    dap_dress = models.CharField(max_length=40, default='Wear black and white clothes')
+    
+    # section 5
+    inv_pdf = models.FileField(upload_to='file/anastasia/', blank=True, null=True)
 
     created = models.DateTimeField(auto_now_add=True, auto_created=True, editable=False)
     updated = models.DateTimeField(auto_created=True, auto_now=True, editable=True)

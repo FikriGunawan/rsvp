@@ -14,7 +14,7 @@ class FreeAnastasia(models.Model):
     # section 1
     title = models.CharField(max_length=40, help_text='Your birthday title')
     name = models.CharField(max_length=30, default='Your name')
-    age = models.CharField(max_length=2, default='18th')
+    age = models.CharField(max_length=10, default='18th')
     hashtag = models.CharField(max_length=30, default='Your #hashtag here')
 
     # section 2
